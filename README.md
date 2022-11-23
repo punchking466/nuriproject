@@ -14,7 +14,7 @@ yarn
 ```
 
 패키지 설치 후
--tip. 패키지 설치 후 프로젝트 최상단에 .env 파일 생헝 하여야 합니다.
+-tip. 패키지 설치 후 프로젝트 최상단에 .env 파일 생성 하여야 합니다.
 
 dev (개발환경 실행) :
 
@@ -68,6 +68,6 @@ yarn start
 - config.js : DB, smtp 등 config
 - server.js : router impot 및 app setup
 - utils : jwt인증, pagination 등 각종 메소드 모음
-- routes/router.js : router cjfl
+- routes/router.js : router
 - controller 
 
