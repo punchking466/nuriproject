@@ -1,0 +1,9 @@
+tags:
+  - refreshToken
+summary: 토큰 재발행
+responses:
+  200:
+    description: OK
+security:
+  - accessToken: []
+    refreshToken: []

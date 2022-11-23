@@ -1,0 +1,124 @@
+#회원가입
+/sign-up/user:
+  post:
+    $ref: ./signUp/signUp-user.yaml
+
+/sign-up/partner:
+  post:
+    $ref: ./signUp/signUp-partner.yaml
+
+#로그인관련
+/login:
+  post:
+    $ref: ./login/login.yaml
+
+/logout:
+  post:
+    $ref: ./login/logout.yaml
+
+/find-id:
+  get:
+    $ref: ./login/find-id.yaml
+
+/find-pw:
+  put:
+    $ref: ./login/find-pw.yaml
+
+/secession:
+  delete:
+    $ref: ./login/secession.yaml
+
+#SMS 발송
+/sms-send:
+  post:
+    $ref: ./smsVerify/sms-send.yaml
+
+/verify:
+  get:
+    $ref: ./smsVerify/verify.yaml
+
+#refresh
+/refresh:
+  post:
+    $ref: ./refresh/refresh.yaml
+
+#채용공고 관련
+/list/post:
+  get:
+    $ref: ./jobPost/list-post.yaml
+
+/posts:
+  post:
+    $ref: ./jobPost/posts.yaml
+
+/edit/post:
+  put:
+    $ref: ./jobPost/edit.yaml
+
+/find/post:
+  get:
+    $ref: ./jobPost/find.yaml
+
+/post:
+  delete:
+    $ref: ./jobPost/delete.yaml
+
+#이력서관련
+/resume:
+  post:
+    $ref: ./resume/resume-post.yaml
+  put:
+    $ref: ./resume/resume-put.yaml
+  delete:
+    $ref: ./resume/resume-delete.yaml
+
+/userinfo/resume:
+  get:
+    $ref: ./resume/resume-userinfo.yaml
+
+#제휴문의
+/business-inquiry:
+  post:
+    $ref: ./businessInquiry/inquiry.yaml
+
+#행사공지
+/event-post:
+  post:
+    $ref: ./eventBoard/event-post.yaml
+  delete:
+    $ref: ./eventBoard/event-delete.yaml
+
+/edit/event-post:
+  put:
+    $ref: ./eventBoard/event-put.yaml
+
+/find/event-post:
+  get:
+    $ref: ./eventBoard/event-get.yaml
+
+#마이페이지
+/mypage:
+  get:
+    $ref: ./mypage/mypage-get.yaml
+
+/edit/mypage:
+  put:
+    $ref: ./mypage/mypage-put.yaml
+
+/mypage/resume:
+  get:
+    $ref: ./mypage/myresume-list.yaml
+
+/find/resume:
+  get:
+    $ref: ./mypage/myresume-get.yaml
+
+/mypage/company:
+  get:
+    $ref: ./mypage/mycompany-get.yaml
+  put:
+    $ref: ./mypage/mycompany-put.yaml
+
+/verify/user:
+  get:
+    $ref: ./mypage/verify-get.yaml

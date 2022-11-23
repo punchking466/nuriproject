@@ -1,0 +1,21 @@
+tags:
+  - 채용공고 관련
+summary: 채용공고 등록
+consumes: multipart/form-data
+parameters:
+  - name: postImg
+    in: formData
+    type: file
+  - name: title
+    in: formData
+    type: string
+  - name: content
+    in: formData
+    type: string
+  - name: end_date
+    in: formData
+    type: string
+responses:
+  {}
+security:
+  - accessToken: []

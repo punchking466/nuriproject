@@ -1,0 +1,95 @@
+consumes: multipart/form-data
+parameters:
+  - in: formData
+    name: idPhoto
+    type: file
+  - in: formData
+    name: jot_title_id
+    type: Int
+    description: 채용공고 번호
+  - in: formData
+    name: state
+    type: string
+    description: 이력서 상태
+  - in: formData
+    name: gender
+    type: string
+  - in: formData
+    name: birth_day
+    type: string
+  - in: formData
+    name: phone
+    type: string
+  - in: formData
+    name: email
+    type: string
+  - in: formData
+    name: zip_code
+    type: string
+  - in: formData
+    name: address
+    type: string
+  - in: formData
+    name: detail_address
+    type: string
+  - in: formData
+    name: job1_depth1
+    type: string
+  - in: formData
+    name: job1_depth2
+    type: string
+  - in: formData
+    name: job2_depth1
+    type: string
+  - in: formData
+    name: job2_depth2
+    type: string
+  - in: formData
+    name: workday
+    type: string
+  - in: formData
+    name: start_time
+    type: Int
+  - in: formData
+    name: end_time
+    type: Int
+  - in: formData
+    name: education
+    type: string
+  - in: formData
+    name: school_name
+    type: string
+  - in: formData
+    name: graduation
+    type: Int
+  - in: formData
+    name: major
+    type: string
+  - in: formData
+    name: graduation_category
+    type: string
+  - in: formData
+    name: military_service
+    type: string
+  - in: formData
+    name: disabled
+    type: string
+  - in: formData
+    name: bank
+    type: string
+  - in: formData
+    name: account_number
+    type: string
+  - in: formData
+    name: self_introducation
+    type: TEXT
+  - in: formData
+    name: licenses_info
+    type: TEXT
+  - in: formData
+    name: career_info
+    type: TEXT
+responses:
+  {}
+security:
+  - accessToken: []

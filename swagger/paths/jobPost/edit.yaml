@@ -1,0 +1,25 @@
+tags:
+  - 채용공고 관련
+summary: 채용공고 수정
+consumes: multipart/form-data
+parameters:
+  - name: postImg
+    in: formData
+    type: file
+  - name: id
+    in: formData
+    type: Int
+    description: 채용공고 번호
+  - name: title
+    in: formData
+    type: string
+  - name: content
+    in: formData
+    type: string
+  - name: end_date
+    in: formData
+    type: string
+responses:
+  {}
+security:
+  - accessToken: []

@@ -1,0 +1,75 @@
+tags: 
+  - 회원가입
+summary: 협력사 회원 가입
+parameters:
+  - in: body
+    name: body
+    schema:
+      type: object
+      properties:
+        signname:
+          required: true
+          type: string
+          example: abcd@gmail.com
+        password:
+          required: true
+          type: string
+          example: 1q2w3e4r!@#$
+        user_name:
+          required: true
+          type: string
+          example: 홍길동
+        department:
+          required: false
+          type: string
+          example: 경영지원팀
+        position:
+          required: false
+          type: string
+          example: 부장
+        user_phone:
+          required: true
+          type: string
+          example: 01012345555
+        company_name:
+          required: true
+          type: string
+          example: 스페이스X
+        company_phone:
+          required: false
+          type: string
+          example: 01055121234
+        zip_code:
+          required: false
+          type: string
+          example: 51231
+        address:
+          required: false
+          type: string
+          example: 서울특별시
+        detail_address:
+          required: false
+          type: string
+          example: 102호
+        fax:
+          required: true
+          type: string
+          example: 025551234
+        business_num:
+          required: true
+          type: string
+          example: 3017415124
+        ceo:
+          required: false
+          type: string
+          example: 일론머스크
+        bank:
+          required: true
+          type: string
+          example: 국민은행
+        account_number:
+          required: true
+          type: integer
+          example: 12435
+responses:
+  {}

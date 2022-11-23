@@ -1,0 +1,15 @@
+tags:
+  - 로그인
+summary: 비밀번호 찾기
+parameters:
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        signname:
+          required: true
+          type: string
+          example: xxx@gmail.com
+responses:
+  {}

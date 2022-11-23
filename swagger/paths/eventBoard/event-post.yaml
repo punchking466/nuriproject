@@ -1,0 +1,27 @@
+tags:
+  - 행사 공지
+summary: 행사공지 등록
+consumes: multipart/form-data
+parameters:
+  - in: formData
+    type: file
+    name: eventImg
+  - in: formData
+    type: string
+    name: title
+  - in: formData
+    type: string
+    name: content
+  - in: formData
+    type: string
+    name: web_site
+  - in: formData
+    type: string
+    name: start_date
+  - in: formData
+    type: string
+    name: end_date
+responses:
+  {}
+security:
+  - accessToken: []

@@ -1,0 +1,20 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: nuri API
+host: api-nurl.rsad.work
+basePath: /
+schemes: [http, https]
+securityDefinitions:
+  accessToken:
+    type: apiKey
+    name: authorization
+    scheme: bearer
+    in: header
+  refreshToken:
+    type: apiKey
+    name: refresh
+    in: header
+paths:
+  $ref: ./paths/index.yaml
+  

@@ -1,0 +1,9 @@
+tags:
+  - 로그인
+summary: 회원 탈퇴
+responses:
+  200:
+    description: OK
+security:
+  - accessToken: []
+    refreshToken: []

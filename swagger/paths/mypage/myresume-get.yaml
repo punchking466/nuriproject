@@ -1,0 +1,10 @@
+tags:
+  - 마이페이지
+summary: 마이페이지 인력등록, 특정 이력서 호출
+parameters:
+  - in: query
+    name: resume_id
+responses:
+  {}
+security:
+  - accessToken: []

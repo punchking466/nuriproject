@@ -1,0 +1,4 @@
+tags:
+  - 이력서 관련
+summary: 이력서 등록
+$ref: ../../definitions/resume-post.yaml

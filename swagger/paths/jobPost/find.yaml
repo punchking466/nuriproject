@@ -1,0 +1,11 @@
+tags:
+  - 채용공고 관련
+summary: 채용공고 수정 버튼 클릭 시 해당 채용공고 호출
+parameters:
+  - name: post_id
+    in: query
+    type: Int
+responses:
+  {}
+security:
+  - accessToken: []

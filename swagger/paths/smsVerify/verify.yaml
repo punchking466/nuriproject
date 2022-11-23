@@ -1,0 +1,12 @@
+tags:
+  - SMS 인증
+summary: 인증번호 검증
+parameters:
+  - name: phone
+    in: query
+    schema:
+  - name: verifyCode
+    in: query
+responses:
+  200:
+    description: OK

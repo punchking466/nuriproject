@@ -1,0 +1,10 @@
+tags:
+  - 행사 공지
+summary: 행사공지 수정 버튼, 데이터 호출
+parameters:
+  - name: eventId
+    in: query
+responses:
+  {}
+security:
+  - accessToken: []

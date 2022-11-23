@@ -1,0 +1,9 @@
+tags:
+  - 로그인
+summary: 아이디찾기
+parameters:
+  - name: user_phone
+    in: query
+responses:
+  200:
+    description: OK

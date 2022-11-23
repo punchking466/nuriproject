@@ -1,0 +1,18 @@
+tags:
+  - 이력서 관련
+summary: 이력서 삭제
+parameters:
+  - in: body
+    name: body
+    schema:
+      type: object
+      properties:
+        resume_id:
+          required: true
+          type: Int
+          example: 99
+responses:
+  200:
+    description: OK
+security:
+  - accessToken: []

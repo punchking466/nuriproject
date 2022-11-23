@@ -1,0 +1,45 @@
+tags:
+  - 마이페이지
+summary: 마이페이지 회사정보 수정, 수정 내용 저장
+parameters:
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        company_name:
+          required: false
+          type: string
+          example: any
+        zip_code:
+          required: false
+          type: string
+          example: any
+        address:
+          required: false
+          type: string
+          example: any
+        detail_address:
+          required: false
+          type: string
+          example: any
+        fax:
+          required: false
+          type: string
+          example: any
+        business_num:
+          required: false
+          type: string
+          example: any
+        ceo:
+          required: false
+          type: string
+          example: any
+        account_number:
+          required: false
+          type: string
+          example: any
+responses:
+  {}
+security:
+  - accessToken: []

@@ -1,0 +1,16 @@
+tags:
+  - SMS 인증
+summary: 인증문자 발송
+parameters:
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        phone:
+          required: true
+          type: string
+          example: 01012345678
+responses:
+  200:
+    description: OK

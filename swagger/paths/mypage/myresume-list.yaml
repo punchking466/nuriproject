@@ -1,0 +1,12 @@
+tags:
+  - 마이페이지
+summary: 마이페이지 내 인력등록, 인력등록 리스트 호출
+parameters:
+  - in: query
+    name: curpage
+  - in: query
+    name: pageSize
+responses:
+  {}
+security:
+  - accessToken: []

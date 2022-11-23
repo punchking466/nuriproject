@@ -1,0 +1,12 @@
+tags:
+  - 마이페이지
+summary: 비밀번호 검증
+parameters:
+  - in: query
+    name: signname
+  - in: query
+    name: password
+responses:
+  {}
+security:
+  - accessToken: []

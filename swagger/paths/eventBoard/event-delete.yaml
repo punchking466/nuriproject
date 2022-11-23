@@ -1,0 +1,17 @@
+tags:
+  - 행사 공지
+summary: 행사공지 삭제
+parameters:
+  - name: body
+    in: body
+    schema:
+      type: object
+      properties:
+        eventId:
+          required: true
+          type: Int
+          example: 99
+responses:
+  {}
+security:
+  - accessToken: []

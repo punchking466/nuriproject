@@ -1,0 +1,33 @@
+tags:
+  - 마이페이지
+summary: 마이페이지 내정보 수정, 저장버튼
+parameters:
+  - in: body
+    name: body
+    schema:
+      type: object
+      properties:
+        password:
+          required: false
+          type: string
+          example: any
+        user_name:
+          required: false
+          type: string
+          example: any
+        zip_code: 
+          required: false
+          type: string
+          example: any
+        address:
+          required: false
+          type: string
+          example: any
+        detail_address:
+          required: false
+          type: string
+          example: any
+responses:
+  {}
+security:
+  - accessToken: []

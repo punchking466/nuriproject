@@ -1,0 +1,19 @@
+tags: 
+  - 로그인
+summary: 로그인
+parameters:
+  - in: body
+    name: body
+    schema:
+      type: object
+      properties:
+        signname:
+          required: true
+          type: string
+          example: abcd@gmail.com
+        password:
+          required: true
+          type: string
+          example: 1q2w3e4r!@#$
+responses:
+  {}

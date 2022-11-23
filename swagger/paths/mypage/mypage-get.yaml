@@ -1,0 +1,7 @@
+tags:
+  - 마이페이지
+summary: 마이페이지 내정보 호출
+responses:
+  {}
+security:
+  - accessToken: []

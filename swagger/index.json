@@ -1,0 +1,1340 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "nuri API"
+  },
+  "host": "api-nurl.rsad.work",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "accessToken": {
+      "type": "apiKey",
+      "name": "authorization",
+      "scheme": "bearer",
+      "in": "header"
+    },
+    "refreshToken": {
+      "type": "apiKey",
+      "name": "refresh",
+      "in": "header"
+    }
+  },
+  "paths": {
+    "/sign-up/user": {
+      "post": {
+        "tags": [
+          "회원가입"
+        ],
+        "summary": "일반사용자 회원 가입",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "signname": {
+                  "required": true,
+                  "type": "string",
+                  "example": "abcd@gmail.com"
+                },
+                "password": {
+                  "required": true,
+                  "type": "string",
+                  "example": "1q2w3e4r!@#$"
+                },
+                "user_name": {
+                  "required": true,
+                  "type": "string",
+                  "example": "홍길동"
+                },
+                "user_phone": {
+                  "required": true,
+                  "type": "string",
+                  "example": 136956781
+                },
+                "zip_code": {
+                  "required": true,
+                  "type": "string",
+                  "example": 58124
+                },
+                "address": {
+                  "required": true,
+                  "type": "string",
+                  "example": "서울특별시"
+                },
+                "detail_address": {
+                  "required": true,
+                  "type": "string",
+                  "example": "102호"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/sign-up/partner": {
+      "post": {
+        "tags": [
+          "회원가입"
+        ],
+        "summary": "협력사 회원 가입",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "signname": {
+                  "required": true,
+                  "type": "string",
+                  "example": "abcd@gmail.com"
+                },
+                "password": {
+                  "required": true,
+                  "type": "string",
+                  "example": "1q2w3e4r!@#$"
+                },
+                "user_name": {
+                  "required": true,
+                  "type": "string",
+                  "example": "홍길동"
+                },
+                "department": {
+                  "required": false,
+                  "type": "string",
+                  "example": "경영지원팀"
+                },
+                "position": {
+                  "required": false,
+                  "type": "string",
+                  "example": "부장"
+                },
+                "user_phone": {
+                  "required": true,
+                  "type": "string",
+                  "example": 136956781
+                },
+                "company_name": {
+                  "required": true,
+                  "type": "string",
+                  "example": "스페이스X"
+                },
+                "company_phone": {
+                  "required": false,
+                  "type": "string",
+                  "example": 146055836
+                },
+                "zip_code": {
+                  "required": false,
+                  "type": "string",
+                  "example": 51231
+                },
+                "address": {
+                  "required": false,
+                  "type": "string",
+                  "example": "서울특별시"
+                },
+                "detail_address": {
+                  "required": false,
+                  "type": "string",
+                  "example": "102호"
+                },
+                "fax": {
+                  "required": true,
+                  "type": "string",
+                  "example": 5690012
+                },
+                "business_num": {
+                  "required": true,
+                  "type": "string",
+                  "example": 3017415124
+                },
+                "ceo": {
+                  "required": false,
+                  "type": "string",
+                  "example": "일론머스크"
+                },
+                "bank": {
+                  "required": true,
+                  "type": "string",
+                  "example": "국민은행"
+                },
+                "account_number": {
+                  "required": true,
+                  "type": "integer",
+                  "example": 12435
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "로그인"
+        ],
+        "summary": "로그인",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "signname": {
+                  "required": true,
+                  "type": "string",
+                  "example": "abcd@gmail.com"
+                },
+                "password": {
+                  "required": true,
+                  "type": "string",
+                  "example": "1q2w3e4r!@#$"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/logout": {
+      "post": {
+        "tags": [
+          "로그인"
+        ],
+        "summary": null,
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/find-id": {
+      "get": {
+        "tags": [
+          "로그인"
+        ],
+        "summary": "아이디찾기",
+        "parameters": [
+          {
+            "name": "user_phone",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/find-pw": {
+      "put": {
+        "tags": [
+          "로그인"
+        ],
+        "summary": "비밀번호 찾기",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "signname": {
+                  "required": true,
+                  "type": "string",
+                  "example": "xxx@gmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/secession": {
+      "delete": {
+        "tags": [
+          "로그인"
+        ],
+        "summary": "회원 탈퇴",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accessToken": [],
+            "refreshToken": []
+          }
+        ]
+      }
+    },
+    "/sms-send": {
+      "post": {
+        "tags": [
+          "SMS 인증"
+        ],
+        "summary": "인증문자 발송",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "phone": {
+                  "required": true,
+                  "type": "string",
+                  "example": "01012345678"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/verify": {
+      "get": {
+        "tags": [
+          "SMS 인증"
+        ],
+        "summary": "인증번호 검증",
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": null
+          },
+          {
+            "name": "verifyCode",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/refresh": {
+      "post": {
+        "tags": [
+          "refreshToken"
+        ],
+        "summary": "토큰 재발행",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accessToken": [],
+            "refreshToken": []
+          }
+        ]
+      }
+    },
+    "/list/post": {
+      "get": {
+        "tags": [
+          "채용공고 관련"
+        ],
+        "summary": "채용공고 리스트",
+        "parameters": [
+          {
+            "name": "curpage",
+            "in": "query"
+          },
+          {
+            "name": "pageSize",
+            "in": "query"
+          },
+          {
+            "name": "orderCol",
+            "in": "query"
+          },
+          {
+            "name": "state",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/posts": {
+      "post": {
+        "tags": [
+          "채용공고 관련"
+        ],
+        "summary": "채용공고 등록",
+        "consumes": "multipart/form-data",
+        "parameters": [
+          {
+            "name": "postImg",
+            "in": "formData",
+            "type": "file"
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "end_date",
+            "in": "formData",
+            "type": "string"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/edit/post": {
+      "put": {
+        "tags": [
+          "채용공고 관련"
+        ],
+        "summary": "채용공고 수정",
+        "consumes": "multipart/form-data",
+        "parameters": [
+          {
+            "name": "postImg",
+            "in": "formData",
+            "type": "file"
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "type": "Int",
+            "description": "채용공고 번호"
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "formData",
+            "type": "string"
+          },
+          {
+            "name": "end_date",
+            "in": "formData",
+            "type": "string"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/find/post": {
+      "get": {
+        "tags": [
+          "채용공고 관련"
+        ],
+        "summary": "채용공고 수정 버튼 클릭 시 해당 채용공고 호출",
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "query",
+            "type": "Int"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/post": {
+      "delete": {
+        "tags": [
+          "채용공고 관련"
+        ],
+        "summary": "채용공고 수정 버튼 클릭 시 해당 채용공고 호출",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "post_id": {
+                  "required": true,
+                  "type": "Int",
+                  "example": 99
+                }
+              }
+            }
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/resume": {
+      "post": {
+        "tags": [
+          "이력서 관련"
+        ],
+        "summary": "이력서 등록",
+        "consumes": "multipart/form-data",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "idPhoto",
+            "type": "file"
+          },
+          {
+            "in": "formData",
+            "name": "jot_title_id",
+            "type": "Int",
+            "description": "채용공고 번호"
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "description": "이력서 상태"
+          },
+          {
+            "in": "formData",
+            "name": "gender",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "birth_day",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "zip_code",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "detail_address",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "job1_depth1",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "job1_depth2",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "job2_depth1",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "job2_depth2",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "workday",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "start_time",
+            "type": "Int"
+          },
+          {
+            "in": "formData",
+            "name": "end_time",
+            "type": "Int"
+          },
+          {
+            "in": "formData",
+            "name": "education",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "school_name",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "graduation",
+            "type": "Int"
+          },
+          {
+            "in": "formData",
+            "name": "major",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "graduation_category",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "military_service",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "disabled",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "bank",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "account_number",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "self_introducation",
+            "type": "TEXT"
+          },
+          {
+            "in": "formData",
+            "name": "licenses_info",
+            "type": "TEXT"
+          },
+          {
+            "in": "formData",
+            "name": "career_info",
+            "type": "TEXT"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "이력서 관련"
+        ],
+        "summary": "이력서 수정",
+        "consumes": "multipart/form-data",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "idPhoto",
+            "type": "file"
+          },
+          {
+            "in": "formData",
+            "name": "id",
+            "type": "Int",
+            "description": "이력서 번호"
+          },
+          {
+            "in": "formData",
+            "name": "jot_title_id",
+            "type": "Int",
+            "description": "채용공고 번호"
+          },
+          {
+            "in": "formData",
+            "name": "state",
+            "type": "string",
+            "description": "이력서 상태"
+          },
+          {
+            "in": "formData",
+            "name": "gender",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "birth_day",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "zip_code",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "detail_address",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "job1_depth1",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "job1_depth2",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "job2_depth1",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "job2_depth2",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "workday",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "start_time",
+            "type": "Int"
+          },
+          {
+            "in": "formData",
+            "name": "end_time",
+            "type": "Int"
+          },
+          {
+            "in": "formData",
+            "name": "education",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "school_name",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "graduation",
+            "type": "Int"
+          },
+          {
+            "in": "formData",
+            "name": "major",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "graduation_category",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "military_service",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "disabled",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "bank",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "account_number",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "self_introducation",
+            "type": "TEXT"
+          },
+          {
+            "in": "formData",
+            "name": "licenses_info",
+            "type": "TEXT"
+          },
+          {
+            "in": "formData",
+            "name": "career_info",
+            "type": "TEXT"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "이력서 관련"
+        ],
+        "summary": "이력서 삭제",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resume_id": {
+                  "required": true,
+                  "type": "Int",
+                  "example": 99
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/userinfo/resume": {
+      "get": {
+        "tags": [
+          "이력서 관련"
+        ],
+        "summary": "이력서 작성 시, 저장된 개인정보 호출",
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/business-inquiry": {
+      "post": {
+        "tags": [
+          "제휴문의"
+        ],
+        "consumes": "multipart/form-data",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "company",
+            "type": "sting"
+          },
+          {
+            "in": "formData",
+            "name": "type",
+            "type": "string",
+            "description": "업종"
+          },
+          {
+            "in": "formData",
+            "name": "business_num",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "ceo",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "detail_address",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "web_site",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "manager",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "file",
+            "type": "file"
+          },
+          {
+            "in": "formData",
+            "name": "message",
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/event-post": {
+      "post": {
+        "tags": [
+          "행사 공지"
+        ],
+        "summary": "행사공지 등록",
+        "consumes": "multipart/form-data",
+        "parameters": [
+          {
+            "in": "formData",
+            "type": "file",
+            "name": "eventImg"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "title"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "content"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "web_site"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "start_date"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "end_date"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "행사 공지"
+        ],
+        "summary": "행사공지 삭제",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "eventId": {
+                  "required": true,
+                  "type": "Int",
+                  "example": 99
+                }
+              }
+            }
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/edit/event-post": {
+      "put": {
+        "tags": [
+          "행사 공지"
+        ],
+        "summary": "행사공지 수정, 저장버튼 클릭 시",
+        "consumes": "multipart/form-data",
+        "parameters": [
+          {
+            "in": "formData",
+            "type": "file",
+            "name": "eventImg"
+          },
+          {
+            "in": "formData",
+            "type": "Int",
+            "description": "행사공지 번호",
+            "name": "id"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "title"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "content"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "web_site"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "start_date"
+          },
+          {
+            "in": "formData",
+            "type": "string",
+            "name": "end_date"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/find/event-post": {
+      "get": {
+        "tags": [
+          "행사 공지"
+        ],
+        "summary": "행사공지 수정 버튼, 데이터 호출",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "query"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/mypage": {
+      "get": {
+        "tags": [
+          "마이페이지"
+        ],
+        "summary": "마이페이지 내정보 호출",
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/edit/mypage": {
+      "put": {
+        "tags": [
+          "마이페이지"
+        ],
+        "summary": "마이페이지 내정보 수정, 저장버튼",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "user_name": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "zip_code": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "address": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "detail_address": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/mypage/resume": {
+      "get": {
+        "tags": [
+          "마이페이지"
+        ],
+        "summary": "마이페이지 내 인력등록, 인력등록 리스트 호출",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "curpage"
+          },
+          {
+            "in": "query",
+            "name": "pageSize"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/find/resume": {
+      "get": {
+        "tags": [
+          "마이페이지"
+        ],
+        "summary": "마이페이지 인력등록, 특정 이력서 호출",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "resume_id"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/mypage/company": {
+      "get": {
+        "tags": [
+          "마이페이지"
+        ],
+        "summary": "마이페이지 회사정보, 리스트 호출",
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "마이페이지"
+        ],
+        "summary": "마이페이지 회사정보 수정, 수정 내용 저장",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "company_name": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "zip_code": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "address": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "detail_address": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "fax": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "business_num": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "ceo": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                },
+                "account_number": {
+                  "required": false,
+                  "type": "string",
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/verify/user": {
+      "get": {
+        "tags": [
+          "마이페이지"
+        ],
+        "summary": "비밀번호 검증",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "signname"
+          },
+          {
+            "in": "query",
+            "name": "password"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    }
+  }
+}

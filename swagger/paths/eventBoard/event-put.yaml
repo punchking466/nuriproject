@@ -1,0 +1,31 @@
+tags:
+  - 행사 공지
+summary: 행사공지 수정, 저장버튼 클릭 시
+consumes: multipart/form-data
+parameters:
+  - in: formData
+    type: file
+    name: eventImg
+  - in: formData
+    type: Int
+    description: 행사공지 번호
+    name: id
+  - in: formData
+    type: string
+    name: title
+  - in: formData
+    type: string
+    name: content
+  - in: formData
+    type: string
+    name: web_site
+  - in: formData
+    type: string
+    name: start_date
+  - in: formData
+    type: string
+    name: end_date
+responses:
+  {}
+security:
+  - accessToken: []

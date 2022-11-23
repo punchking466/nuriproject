@@ -1,0 +1,41 @@
+consumes: multipart/form-data
+parameters:
+  - in: formData
+    name: company
+    type: sting
+  - in: formData
+    name: type
+    type: string
+    description: 업종
+  - in: formData
+    name: business_num
+    type: string
+  - in: formData
+    name: ceo
+    type: string
+  - in: formData
+    name: address
+    type: string
+  - in: formData
+    name: detail_address
+    type: string
+  - in: formData
+    name: web_site
+    type: string
+  - in: formData
+    name: manager
+    type: string
+  - in: formData
+    name: phone
+    type: string
+  - in: formData
+    name: email
+    type: string
+  - in: formData
+    name: file
+    type: file
+  - in: formData
+    name: message
+    type: string
+responses:
+  {}
